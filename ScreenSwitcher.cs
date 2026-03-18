@@ -41,6 +41,23 @@ public class ScreenSwitcher : MonoBehaviour
     public GameObject StartButton;
     public GameObject HomeFooter;
 
+    [Header("Trip Flow")]
+    public GameObject EndTrip;
+
+    [Header("Destination Details")]
+    public GameObject DetinationsRDetails;
+
+    [Header("Scan Section")]
+    public GameObject ScanSection;
+
+    [Header("Payment Approved")]
+    public GameObject PaymentApproved;
+
+    [Header("PopUp Schedule Later")]
+    public GameObject SheduleLaterPopUp;
+    public GameObject SuccessfullScheduled;
+
+
     void Start()
     {
         Signin.SetActive(false);
@@ -71,6 +88,14 @@ public class ScreenSwitcher : MonoBehaviour
         LookingAvailDrivers.SetActive(false);
         ConfirmDriver.SetActive(false);
 
+        EndTrip.SetActive(false);
+
+        DetinationsRDetails.SetActive(false);
+
+        ScanSection.SetActive(false);
+
+        SheduleLaterPopUp.SetActive(false);
+        SuccessfullScheduled.SetActive(false);
     }
 
     // ==============================
@@ -304,6 +329,93 @@ public class ScreenSwitcher : MonoBehaviour
         UserToAgentChat.SetActive(false);
         UserToUserChat.SetActive(false);
         SupportSection.SetActive(true);
+    }
+
+    public void GoToTrip()
+    {
+        ConfirmDriver.SetActive(false);
+        EndTrip.SetActive(true);
+    }
+
+    public void GoToDestinationDetails()
+    {
+        EndTrip.SetActive(false);
+        DetinationsRDetails.SetActive(true);
+    }
+
+    public void GoToScanSection()
+    {
+        DetinationsRDetails.SetActive(false);
+        HomeSection.SetActive(false);
+        ScanSection.SetActive(true);
+    }
+
+    public void GoToPaymentApproved()
+    {
+        DetinationsRDetails.SetActive(false);
+        PopUpModule.SetActive(true);
+        PaymentApproved.SetActive(true);
+
+    }
+
+    public void BackToDestinationDetails()
+    {
+        ScanSection.SetActive(false);
+        HomeSection.SetActive(true);
+        DetinationsRDetails.SetActive(true);
+    }
+
+    public void BackToHomeSection()
+    {
+        PaymentApproved.SetActive(false);
+        PopUpModule.SetActive(false);
+        EndTrip.SetActive(false);
+        ConfirmDriver.SetActive(false);
+
+        BookNow.SetActive(false);
+        SheduleLater.SetActive(false);
+        PickUpOrDropOffArea.SetActive(false);
+
+        HomeSection.SetActive(true);
+
+        HomeFooter.SetActive(true);
+        StartButton.SetActive(true);
+    }
+
+    public void GoToScheduleLater()
+    {
+        PopUpModule.SetActive(true);
+        SheduleLaterPopUp.SetActive(true);
+        SuccessfullScheduled.SetActive(false);
+    }
+
+    public void OnConfirmSchedule()
+    {
+        // Hide schedule popup
+        SheduleLaterPopUp.SetActive(false);
+
+        // Show success popup
+        SuccessfullScheduled.SetActive(true);
+
+        // After 3 seconds go back to home
+        StartCoroutine(BackToHomeAfterSchedule());
+    }
+
+    IEnumerator BackToHomeAfterSchedule()
+    {
+        yield return new WaitForSeconds(3f);
+
+        // Hide everything
+        SuccessfullScheduled.SetActive(false);
+        PopUpModule.SetActive(false);
+
+        // Reset home to original state
+        HomeSection.SetActive(true);
+        HomeFooter.SetActive(true);
+        StartButton.SetActive(true);
+        BookNow.SetActive(false);
+        SheduleLater.SetActive(false);
+        PickUpOrDropOffArea.SetActive(false);
     }
 
 }
