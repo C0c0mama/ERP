@@ -57,6 +57,10 @@ public class ScreenSwitcher : MonoBehaviour
     public GameObject SheduleLaterPopUp;
     public GameObject SuccessfullScheduled;
 
+    [Header("Trip Card Popup")]
+    public GameObject TransactionDetails;
+    public GameObject ScheduledRideDetails;
+
 
     void Start()
     {
@@ -96,6 +100,9 @@ public class ScreenSwitcher : MonoBehaviour
 
         SheduleLaterPopUp.SetActive(false);
         SuccessfullScheduled.SetActive(false);
+
+        TransactionDetails.SetActive(false);
+        ScheduledRideDetails.SetActive(false);
     }
 
     // ==============================
@@ -108,6 +115,12 @@ public class ScreenSwitcher : MonoBehaviour
         Wallet.SetActive(false);
         SupportSection.SetActive(false);
         ProfileSection.SetActive(false);
+    }
+
+    void HideAllPopups()
+    {
+        TransactionDetails.SetActive(false);
+        ScheduledRideDetails.SetActive(false);
     }
 
     // ==============================
@@ -416,6 +429,37 @@ public class ScreenSwitcher : MonoBehaviour
         BookNow.SetActive(false);
         SheduleLater.SetActive(false);
         PickUpOrDropOffArea.SetActive(false);
+    }
+
+    public void BackToConfirmDriver()
+    {
+        // Hide chat
+        UserToUserChat.SetActive(false);
+        ChatSection.SetActive(false);
+
+        // Show HomeSection and ConfirmDriver
+        HomeSection.SetActive(true);
+        ConfirmDriver.SetActive(true);
+    }
+
+    public void ShowTransactionDetails()
+    {
+        HideAllPopups();
+        PopUpModule.SetActive(true);
+        TransactionDetails.SetActive(true);
+    }
+
+    public void ShowScheduledDetails()
+    {
+        HideAllPopups();
+        PopUpModule.SetActive(true);
+        ScheduledRideDetails.SetActive(true);
+    }
+
+    public void ClosePopup()
+    {
+        HideAllPopups();
+        PopUpModule.SetActive(false);
     }
 
 }

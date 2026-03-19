@@ -9958,7 +9958,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 223191257}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1659091253}
+        m_TargetAssemblyTypeName: ScreenSwitcher, Assembly-CSharp
+        m_MethodName: ShowScheduledDetails
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &223191257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14290,7 +14302,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 301516721}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1659091253}
+        m_TargetAssemblyTypeName: ScreenSwitcher, Assembly-CSharp
+        m_MethodName: ClosePopup
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &301516721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17019,7 +17043,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.045}
   m_AnchorMin: {x: 0.099472225, y: 0.21281251}
   m_AnchorMax: {x: 0.92125005, y: 0.8648751}
-  m_AnchoredPosition: {x: 4.447693, y: 0.5311279}
+  m_AnchoredPosition: {x: -23, y: -13}
   m_SizeDelta: {x: -6.1353, y: -43.3455}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &365190274
@@ -39514,7 +39538,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &834897158
 RectTransform:
   m_ObjectHideFlags: 0
@@ -57753,7 +57777,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1212354689}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1659091253}
+        m_TargetAssemblyTypeName: ScreenSwitcher, Assembly-CSharp
+        m_MethodName: BackToConfirmDriver
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1212354689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59096,7 +59132,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1254186041}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1659091253}
+        m_TargetAssemblyTypeName: ScreenSwitcher, Assembly-CSharp
+        m_MethodName: ShowTransactionDetails
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1254186041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64533,7 +64581,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1387877626}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1659091253}
+        m_TargetAssemblyTypeName: ScreenSwitcher, Assembly-CSharp
+        m_MethodName: GoToUserToUserChat
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1387877626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74854,7 +74914,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1641264038}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1659091253}
+        m_TargetAssemblyTypeName: ScreenSwitcher, Assembly-CSharp
+        m_MethodName: ClosePopup
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1641264038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75645,6 +75717,8 @@ MonoBehaviour:
   PaymentApproved: {fileID: 1442918484}
   SheduleLaterPopUp: {fileID: 168550608}
   SuccessfullScheduled: {fileID: 103666022}
+  TransactionDetails: {fileID: 365190272}
+  ScheduledRideDetails: {fileID: 2106223797}
 --- !u!4 &1659091254
 Transform:
   m_ObjectHideFlags: 0
@@ -94929,7 +95003,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.045}
   m_AnchorMin: {x: 0.099472225, y: 0.21281251}
   m_AnchorMax: {x: 0.92125005, y: 0.8648751}
-  m_AnchoredPosition: {x: 4.447693, y: 0.5311279}
+  m_AnchoredPosition: {x: -30, y: -6}
   m_SizeDelta: {x: -6.1353, y: -43.3455}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2106223799
