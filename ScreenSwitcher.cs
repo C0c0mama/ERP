@@ -61,9 +61,14 @@ public class ScreenSwitcher : MonoBehaviour
     public GameObject TransactionDetails;
     public GameObject ScheduledRideDetails;
 
+    [Header("Map")]
+    public MapController MapControl;
+
 
     void Start()
     {
+        MapControl.ShowMap();
+
         Signin.SetActive(false);
         PassengerOrDriver.SetActive(false);
         WelcomePage.SetActive(false);
@@ -130,29 +135,36 @@ public class ScreenSwitcher : MonoBehaviour
     {
         HideAllSections();
         HomeSection.SetActive(true);
+        if (MapControl != null) MapControl.ShowMap();
     }
 
     public void FooterGoToTripSummary()
     {
         HideAllSections();
+        if (MapControl != null) MapControl.HideMap();
         TripSummary.SetActive(true);
     }
 
     public void FooterGoToWallet()
     {
         HideAllSections();
+
+        if (MapControl != null) MapControl.HideMap();
+
         Wallet.SetActive(true);
     }
 
     public void FooterGoToSupport()
     {
         HideAllSections();
+        if (MapControl != null) MapControl.HideMap();
         SupportSection.SetActive(true);
     }
 
     public void FooterGoToProfile()
     {
         HideAllSections();
+        if (MapControl != null) MapControl.HideMap();
         ProfileSection.SetActive(true);
     }
 
@@ -233,6 +245,7 @@ public class ScreenSwitcher : MonoBehaviour
     {
         WelcomePage.SetActive(false);
         HomeSection.SetActive(true);
+        if (MapControl != null) MapControl.ShowMap();   // ← already there
     }
 
     // ==============================
@@ -250,6 +263,10 @@ public class ScreenSwitcher : MonoBehaviour
     // ==============================
     public void OnStartButton()
     {
+        // Hide start button
+        StartButton.SetActive(false);
+
+        // Show body sections
         BookNow.SetActive(true);
         SheduleLater.SetActive(true);
         PickUpOrDropOffArea.SetActive(true);
