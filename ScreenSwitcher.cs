@@ -67,7 +67,8 @@ public class ScreenSwitcher : MonoBehaviour
 
     void Start()
     {
-        MapControl.ShowMap();
+        // ✅ HIDE map at start, not show!
+        if (MapControl != null) MapControl.HideMap();
 
         Signin.SetActive(false);
         PassengerOrDriver.SetActive(false);
@@ -76,36 +77,26 @@ public class ScreenSwitcher : MonoBehaviour
         PassengerRegistration.SetActive(false);
         PRegistrationPage2.SetActive(false);
         PRegistrationPage3.SetActive(false);
-
         TripSummary.SetActive(false);
         Wallet.SetActive(false);
         SupportSection.SetActive(false);
         ProfileSection.SetActive(false);
-
         EditProfileSection.SetActive(false);
         PasswrodEditSection.SetActive(false);
-
         ChatSection.SetActive(false);
         UserToAgentChat.SetActive(false);
         UserToUserChat.SetActive(false);
-
         BookNow.SetActive(false);
         SheduleLater.SetActive(false);
         PickUpOrDropOffArea.SetActive(false);
-
         PopUpModule.SetActive(false);
         LookingAvailDrivers.SetActive(false);
         ConfirmDriver.SetActive(false);
-
         EndTrip.SetActive(false);
-
         DetinationsRDetails.SetActive(false);
-
         ScanSection.SetActive(false);
-
         SheduleLaterPopUp.SetActive(false);
         SuccessfullScheduled.SetActive(false);
-
         TransactionDetails.SetActive(false);
         ScheduledRideDetails.SetActive(false);
     }
@@ -148,9 +139,7 @@ public class ScreenSwitcher : MonoBehaviour
     public void FooterGoToWallet()
     {
         HideAllSections();
-
         if (MapControl != null) MapControl.HideMap();
-
         Wallet.SetActive(true);
     }
 
@@ -243,9 +232,9 @@ public class ScreenSwitcher : MonoBehaviour
     // ==============================
     public void GoToHomeSection()
     {
-        WelcomePage.SetActive(false);
-        HomeSection.SetActive(true);
-        if (MapControl != null) MapControl.ShowMap();   // ← already there
+           WelcomePage.SetActive(false);
+    HomeSection.SetActive(true);
+    if (MapControl != null) MapControl.ShowMap();
     }
 
     // ==============================
